@@ -1,0 +1,44 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+dist/
+tmp/
+temp/
+*.tsbuildinfo
+
+# Angular build output
+**/dist/
+**/out-tsc/
+.angular/cache/
+.angular/build/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# MongoDB dump files
+dump/
+*.bson
+*.json
