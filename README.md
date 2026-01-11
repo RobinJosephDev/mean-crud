@@ -93,18 +93,6 @@ Frontend runs on `http://localhost:4200`
 
 ---
 
-## 🧩 Architecture Overview
-
-```mermaid
-flowchart TD
-A[Angular Frontend] -->|HTTP / JWT| B[Express API]
-B --> C[(MongoDB Atlas)]
-B --> D[Auth Middleware]
-D -->|Access Control| E[Admin/Manager Routes]
-```
-
----
-
 ## 🧠 References
 
 - [Node.js LTS Schedule](https://nodejs.org/en/about/releases/)
