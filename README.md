@@ -179,14 +179,6 @@ ng test
 
 ---
 
-## 🪄 Demo (optional)
-- **Live URL:** _coming soon_
-- **Demo Credentials:**
-  - **Admin:** admin@example.com / admin123
-  - **Manager:** manager@example.com / manager123
-
----
-
 ## 🧩 Architecture Overview
 
 ```mermaid
