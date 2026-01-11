@@ -179,19 +179,6 @@ ng test
 
 ---
 
-## 🚀 Deployment
-
-### Frontend
-- Deployed on [Vercel](https://vercel.com)
-- Zero-config Angular build (`ng build --configuration production`)
-
-### Backend
-- Deployed on [Render](https://render.com)
-- Environment variables configured in Render Dashboard
-- HTTPS, CORS allowed from frontend domain only
-
----
-
 ## 🪄 Demo (optional)
 - **Live URL:** _coming soon_
 - **Demo Credentials:**
