@@ -1,32 +1,9 @@
 # 🧩 MEAN ERP — Small ERP System (MongoDB, Express, Angular, Node)
 
-A **full-stack ERP system** built with the **MEAN stack** (MongoDB, Express.js, Angular, Node.js) and **TypeScript** — designed to demonstrate full production-grade skills for authentication, role-based access, CRUD operations, Docker, testing, and deployment.
+A **full-stack ERP system** built with the **MEAN stack** (MongoDB, Express.js, Angular, Node.js) and **TypeScript** — designed to demonstrate full production-grade skills for CRUD operations.
 
 > This project is part of my full-stack portfolio — built from scratch step-by-step as a practical guide to creating a real-world small ERP.
 
----
-
-## 🚀 Features (MVP)
-
-### 🔐 Authentication & Authorization
-- JWT-based auth with **refresh tokens**
-- **Role-Based Access Control (RBAC)** — Admin / Manager / Employee
-- Route guards on backend (Express) and frontend (Angular)
-
-### 📦 Inventory Module
-- CRUD operations for **Products**
-- Tracks stock quantity, SKU, price, reorder level
-- Pagination & search
-
-### 💰 Sales Module
-- Customers, Orders, Invoices (minimal MVP)
-- Order summary and sales tracking
-
-### 📊 Dashboard
-- KPIs: Total sales (30d), low-stock items, recent orders
-- Charts & summaries (Angular Material / Chart.js)
-
----
 
 ## 🧠 Tech Stack
 
@@ -106,22 +83,6 @@ npm install
 ng serve
 ```
 Frontend runs on `http://localhost:4200`
-
----
-
-## 🧱 Docker (optional, for local orchestration)
----
-
-## 🔒 Security Highlights
-- HTTPS-ready setup
-- Helmet, CORS, rate limiting
-- Strong password hashing (bcrypt 12 rounds)
-- JWT rotation and short expiry
-- Secure cookie handling for refresh tokens
-- Input validation with express-validator
-- Prevents NoSQL injection and XSS via sanitization
-
----
 
 ## 🧰 CI/CD
 
