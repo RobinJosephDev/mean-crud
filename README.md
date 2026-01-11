@@ -35,10 +35,6 @@ A **full-stack ERP system** built with the **MEAN stack** (MongoDB, Express.js, 
 | **Frontend**  | Angular 17+, TypeScript, Angular Material / Tailwind, RxJS |
 | **Backend**   | Node.js (LTS), Express.js, Mongoose, JWT, bcrypt, helmet, morgan |
 | **Database**  | MongoDB Atlas |
-| **Auth**      | JWT (access + refresh tokens), role guards |
-| **Testing**   | Jest, Supertest, Karma, Cypress |
-| **Deployment**| Vercel (Frontend), Render (Backend), Docker Compose (local) |
-
 ---
 
 ## 🏗️ Project Structure
@@ -114,49 +110,6 @@ Frontend runs on `http://localhost:4200`
 ---
 
 ## 🧱 Docker (optional, for local orchestration)
-
-### Docker Compose (dev)
-```yaml
-version: '3.8'
-services:
-  mongo:
-    image: mongo:8.0
-    volumes:
-      - mongo-data:/data/db
-  backend:
-    build: ./backend
-    ports:
-      - "5000:5000"
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/erp
-    depends_on:
-      - mongo
-volumes:
-  mongo-data:
-```
-
-Run with:
-```bash
-docker compose up --build
-```
-
----
-
-## 🧪 Testing
-
-### Backend
-```bash
-npm run test
-```
-- **Jest + Supertest** for integration tests
-
-### Frontend
-```bash
-ng test
-```
-- Angular TestBed / Karma for unit tests  
-- Cypress for end-to-end
-
 ---
 
 ## 🔒 Security Highlights
