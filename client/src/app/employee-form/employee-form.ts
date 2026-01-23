@@ -42,17 +42,19 @@ import { Employee } from '../employee';
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput placeholder="Name" formControlName="name" required />
-        <mat-error *ngIf="name.invalid && name.touched">
-          Name must be at least 3 characters long.
-        </mat-error>
+
+        @if (name.invalid && name.touched) {
+          <mat-error> Name must be at least 3 characters long. </mat-error>
+        }
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Position</mat-label>
         <input matInput placeholder="Position" formControlName="position" required />
-        <mat-error *ngIf="position.invalid && position.touched">
-          Position must be at least 5 characters long.
-        </mat-error>
+
+        @if (position.invalid && position.touched) {
+          <mat-error> Position must be at least 5 characters long. </mat-error>
+        }
       </mat-form-field>
 
       <mat-radio-group formControlName="level" aria-label="Select an option">
@@ -60,7 +62,9 @@ import { Employee } from '../employee';
         <mat-radio-button name="level" value="mid">Mid</mat-radio-button>
         <mat-radio-button name="level" value="senior">Senior</mat-radio-button>
       </mat-radio-group>
+
       <br />
+
       <button mat-raised-button color="primary" type="submit" [disabled]="employeeForm.invalid">
         Add
       </button>
@@ -68,25 +72,20 @@ import { Employee } from '../employee';
   `,
 })
 export class EmployeeFormComponent {
-  // Reactive form instance
   employeeForm: FormGroup;
 
-  // Input for initial state
   initialState = input<Employee>();
 
-  // Output events
   @Output() formValuesChanged = new EventEmitter<Employee>();
   @Output() formSubmitted = new EventEmitter<Employee>();
 
   constructor(private formBuilder: FormBuilder) {
-    // Initialize the form here to avoid "used before initialization" error
     this.employeeForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       position: ['', [Validators.required, Validators.minLength(5)]],
       level: ['junior', [Validators.required]],
     });
 
-    // Effect to update form whenever initialState changes
     effect(() => {
       const state = this.initialState();
       if (state) {
@@ -99,7 +98,6 @@ export class EmployeeFormComponent {
     });
   }
 
-  // Getters for easy access to form controls
   get name() {
     return this.employeeForm.get('name')!;
   }
@@ -110,7 +108,6 @@ export class EmployeeFormComponent {
     return this.employeeForm.get('level')!;
   }
 
-  // Submit handler
   submitForm() {
     if (this.employeeForm.valid) {
       this.formSubmitted.emit(this.employeeForm.value as Employee);
